@@ -1,5 +1,4 @@
 """
-  Everything do migration runs so 
   everything that should be migrated happens there
   to migrate use playhouse
   http://docs.peewee-orm.com/en/latest/peewee/database.html#schema-migrations
@@ -11,6 +10,8 @@ from .base import Base
 
 
 class {{migration_name}}(Base):
+    def __init__(self):
+      Base.__init__(self)
 
     def up(self):
         """ migrates file to new schema """

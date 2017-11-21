@@ -1,1 +1,3 @@
 import generate_migration
+import run_migration
+import run_migrations
