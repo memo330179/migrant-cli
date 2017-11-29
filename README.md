@@ -21,3 +21,5 @@ Help:
 """
 
 ## Installation ##
+
+`pip install git+https://github.com/memo330179/migrant-cli.git`
