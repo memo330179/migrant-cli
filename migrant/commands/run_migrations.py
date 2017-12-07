@@ -16,10 +16,10 @@ class RunMigration(Base):
     import migrate
     
     migrations = sorted(migrate.__all__)
+    migrations.remove('__init__')
+    migrations.remove('base')
     
     for migration_module in migrations:
-        
-        
         
         migration_number = int(migration_module.split('_', 1)[0])
         migration_up = mainDB.execute_sql('select * from schema_migrations where version = ?', (migration_number,))
