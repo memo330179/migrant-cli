@@ -16,8 +16,10 @@ class RunMigration(Base):
     import migrate
     
     migrations = sorted(migrate.__all__)
-    migrations.remove('__init__')
-    migrations.remove('base')
+    if '__init__' in migrations:
+      migrations.remove('__init__')
+    if 'base' in migrations:
+      migrations.remove('base')
     
     for migration_module in migrations:
         
